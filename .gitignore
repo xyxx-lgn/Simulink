@@ -1,0 +1,10 @@
+# MATLAB / Simulink 自动生成文件
+slprj/
+*.slxc
+*/_ert_rtw/        # 所有代码生成输出
+*.mk
+*.rsp
+*.bat
+*.obj
+*.exe
+*.o
