@@ -1,0 +1,11 @@
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_private.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: Model\PMSM_MC_2025a_ert_rtw\multiword_types.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+foc_fd6288q_v1\pmsm_mc_2025a.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h

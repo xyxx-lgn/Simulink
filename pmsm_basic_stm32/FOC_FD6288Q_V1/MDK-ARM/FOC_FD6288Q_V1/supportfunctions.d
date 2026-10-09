@@ -1,0 +1,17 @@
+foc_fd6288q_v1\supportfunctions.o: C:/Keil_v5/ARM/PACK/ARM/CMSIS-DSP/1.14.2/Source/SupportFunctions/SupportFunctions.c
+foc_fd6288q_v1\supportfunctions.o: C:/Keil_v5/ARM/PACK/ARM/CMSIS-DSP/1.14.2/Source/SupportFunctions/arm_barycenter_f32.c
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-DSP\1.14.2\Include\dsp/support_functions.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-DSP\1.14.2\Include\arm_math_types.h
+foc_fd6288q_v1\supportfunctions.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+foc_fd6288q_v1\supportfunctions.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-DSP\1.14.2\Include\arm_math_memory.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-DSP\1.14.2\Include\dsp/none.h
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-DSP\1.14.2\Include\dsp/utils.h
+foc_fd6288q_v1\supportfunctions.o: C:/Keil_v5/ARM/PACK/ARM/CMSIS-DSP/1.14.2/Source/SupportFunctions/arm_bitonic_sort_f32.c
+foc_fd6288q_v1\supportfunctions.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-DSP\1.14.2\PrivateInclude\arm_sorting.h
+foc_fd6288q_v1\supportfunctions.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h

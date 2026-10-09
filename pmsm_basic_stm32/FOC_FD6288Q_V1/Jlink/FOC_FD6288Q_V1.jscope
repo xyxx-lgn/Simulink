@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="0" IsRTTPlus="0" SamplingPeriod="25" SerialNo="0" JTAG_IRPre="0" JTAG_DRPre="0" IP="" TargetDevice="STM32G431CB" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\MDK-ARM\FOC_FD6288Q_V1\FOC_FD6288Q_V1.axf" />
+            <DataFile Name="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\Jlink\测试数据2.csv" />
+            <RawFile Name="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\Jlink\测试数据2.jraw" />
+            <Scope>
+                <Options TimeResolutionUs="1000000" />
+            </Scope>
+            <Trigger>
+                <Options Level="0" Symbol="MotorSpdRef" On="0" Auto="0" Rise="0" Fall="0" />
+            </Trigger>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="MotorSpdRef" Address="0x20000038" Type="short" TypeID="11" Size="2" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="100" YAvgSampled="3.12316" Offset="4" ShowInGraph="0" YOffset="0" IsAutoConfig="0" YResolution="20" MaxValue="32767" File="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorSpdRef" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Ecode_cnt" Address="0x20000060" Type="int" TypeID="12" Size="4" GraphColorRed="255" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="16382" YAvgSampled="6522.15" Offset="6" ShowInGraph="0" YOffset="0" IsAutoConfig="0" YResolution="5000" MaxValue="2147483647" File="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="Ecode_cnt" />
+            </Symbol>
+            <Symbol>
+                <Options Name="MotorActSpd" Address="0x20000074" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="-59963.4" YMaxSampled="59992.7" YAvgSampled="-0.22187" Offset="10" ShowInGraph="0" YOffset="0" IsAutoConfig="0" YResolution="100" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorActSpd" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Switch" Address="0x200006FC" Type="unsigned char" TypeID="6" Size="1" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="5" YAvgSampled="0.156158" Offset="14" ShowInGraph="0" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="255" File="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_B.Switch" />
+            </Symbol>
+            <Symbol>
+                <Options Name="ADC1InjectDate[0]" Address="0x20000000" Type="unsigned short" TypeID="7" Size="2" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="2343" YAvgSampled="1932.16" Offset="15" ShowInGraph="0" YOffset="0" IsAutoConfig="0" YResolution="300" MaxValue="65535" File="C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h" DrawStyle="0" NameWithParents="ADC1InjectDate[0]" />
+            </Symbol>
+            <Symbol>
+                <Options Name="ADC1InjectDate[1]" Address="0x20000002" Type="unsigned short" TypeID="7" Size="2" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="2373" YAvgSampled="1933.14" Offset="17" ShowInGraph="0" YOffset="0" IsAutoConfig="0" YResolution="300" MaxValue="65535" File="C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h" DrawStyle="0" NameWithParents="ADC1InjectDate[1]" />
+            </Symbol>
+            <Symbol>
+                <Options Name="ADC1InjectDate[2]" Address="0x20000004" Type="unsigned short" TypeID="7" Size="2" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="2368" YAvgSampled="1931.24" Offset="19" ShowInGraph="0" YOffset="0" IsAutoConfig="0" YResolution="300" MaxValue="65535" File="C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h" DrawStyle="0" NameWithParents="ADC1InjectDate[2]" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Udc" Address="0x200000DC" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="18.0525" YAvgSampled="17.1527" Offset="21" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="2" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\MDK-ARM/./Hardware/ALL_H.h" DrawStyle="0" NameWithParents="adcvalue.Udc" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>
