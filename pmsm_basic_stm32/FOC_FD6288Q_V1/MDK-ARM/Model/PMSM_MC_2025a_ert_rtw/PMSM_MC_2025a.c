@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'PMSM_MC_2025a'.
  *
- * Model version                  : 5.4
+ * Model version                  : 5.8
  * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
- * C/C++ source code generated on : Fri Oct  9 20:27:07 2026
+ * C/C++ source code generated on : Sat Oct 10 17:06:19 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -43,7 +43,7 @@ real32_T VBus_Sample;                  /* '<Root>/VBus_Sample' */
 real32_T UVoltage_PWM;                 /* '<S3>/Saturation' */
 real32_T VVoltage_PWM;                 /* '<S3>/Saturation1' */
 real32_T WVoltage_PWM;                 /* '<S3>/Saturation2' */
-real32_T MotorActSpd;                  /* '<S140>/Add1' */
+real32_T MotorActSpd;                  /* '<S143>/Add1' */
 boolean_T SD_MosCtr;                   /* '<S3>/Merge' */
 
 /* Exported block parameters */
@@ -59,10 +59,10 @@ real32_T MC_QCurrLopKi_CFG = 0.00829375815F;/* Variable: MC_QCurrLopKi_CFG
 real32_T MC_QCurrLopKp_CFG = 0.0870848F;/* Variable: MC_QCurrLopKp_CFG
                                          * Referenced by: '<S13>/Constant2'
                                          */
-real32_T MC_SpdLopKi_CFG = 0.001F;     /* Variable: MC_SpdLopKi_CFG
+real32_T MC_SpdLopKi_CFG = 1.0E-5F;    /* Variable: MC_SpdLopKi_CFG
                                         * Referenced by: '<S137>/Constant3'
                                         */
-real32_T MC_SpdLopKp_CFG = 0.02F;      /* Variable: MC_SpdLopKp_CFG
+real32_T MC_SpdLopKp_CFG = 0.002F;     /* Variable: MC_SpdLopKp_CFG
                                         * Referenced by: '<S137>/Constant2'
                                         */
 uint8_T MC_MotModeDebug_CFG = 255U;    /* Variable: MC_MotModeDebug_CFG
@@ -341,7 +341,7 @@ void PMSM_MC_2025a_step(void)
 {
   int64m_T tmp;
   int64m_T tmp_0;
-  int32_T rtb_Add_c2;
+  int32_T rtb_Minus_e;
   int32_T rtb_Sign_e;
   real32_T rtb_Divide;
   real32_T rtb_Gain2_e;
@@ -474,18 +474,18 @@ void PMSM_MC_2025a_step(void)
 
     /* End of Switch: '<S135>/Switch' */
 
-    /* RelationalOperator: '<S141>/Compare' incorporates:
-     *  Constant: '<S141>/Constant'
+    /* RelationalOperator: '<S144>/Compare' incorporates:
+     *  Constant: '<S144>/Constant'
      */
     rtb_Compare_j = (PMSM_MC_2025a_B.Switch == 5);
 
-    /* DiscreteIntegrator: '<S179>/Integrator' */
+    /* DiscreteIntegrator: '<S182>/Integrator' */
     if (rtb_Compare_j && (PMSM_MC_2025a_DW.Integrator_PrevResetState_n <= 0)) {
       PMSM_MC_2025a_DW.Integrator_DSTATE_dr = PMSM_MC_2025a_ConstB.Constant;
-      if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr > 6.0F) {
-        PMSM_MC_2025a_DW.Integrator_DSTATE_dr = 6.0F;
-      } else if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr < -6.0F) {
-        PMSM_MC_2025a_DW.Integrator_DSTATE_dr = -6.0F;
+      if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr > 3.0F) {
+        PMSM_MC_2025a_DW.Integrator_DSTATE_dr = 3.0F;
+      } else if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr < -3.0F) {
+        PMSM_MC_2025a_DW.Integrator_DSTATE_dr = -3.0F;
       }
     }
 
@@ -496,43 +496,68 @@ void PMSM_MC_2025a_step(void)
       PMSM_MC_2025a_DW.Delay_DSTATE_a = Ecode_cnt;
     }
 
-    /* Product: '<S136>/Product' incorporates:
-     *  Constant: '<S136>/Constant'
-     *  Constant: '<S136>/Constant1'
-     *  DataTypeConversion: '<S136>/Data Type Conversion'
+    /* Sum: '<S136>/Minus' incorporates:
      *  Delay: '<S136>/Delay'
      *  Inport: '<Root>/Ecode_cnt'
-     *  Product: '<S136>/Divide'
-     *  Sum: '<S136>/Minus'
      */
-    rtb_Product_ik = (real32_T)(Ecode_cnt - PMSM_MC_2025a_DW.Delay_DSTATE_a) /
-      16384.0F * 60000.0F;
+    rtb_Minus_e = Ecode_cnt - PMSM_MC_2025a_DW.Delay_DSTATE_a;
 
-    /* Delay: '<S140>/Delay' */
+    /* If: '<S136>/If' incorporates:
+     *  Constant: '<S136>/Constant'
+     *  Constant: '<S136>/Constant1'
+     *  Constant: '<S140>/Constant'
+     *  Constant: '<S141>/Constant'
+     *  DataTypeConversion: '<S136>/Data Type Conversion'
+     *  Product: '<S136>/Divide'
+     *  Product: '<S136>/Product'
+     *  Sum: '<S140>/Add'
+     *  Sum: '<S141>/Add'
+     */
+    if (rtb_Minus_e > 8192) {
+      /* Outputs for IfAction SubSystem: '<S136>/If Action Subsystem' incorporates:
+       *  ActionPort: '<S140>/Action Port'
+       */
+      rtb_Minus_e -= 16384;
+
+      /* End of Outputs for SubSystem: '<S136>/If Action Subsystem' */
+    } else if (rtb_Minus_e < -8192) {
+      /* Outputs for IfAction SubSystem: '<S136>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S141>/Action Port'
+       */
+      rtb_Minus_e += 16384;
+
+      /* End of Outputs for SubSystem: '<S136>/If Action Subsystem1' */
+    }
+
+    rtb_Product_ik = (real32_T)rtb_Minus_e / 16384.0F * 60000.0F;
+
+    /* End of If: '<S136>/If' */
+
+    /* Delay: '<S143>/Delay' */
     if (PMSM_MC_2025a_DW.icLoad_d) {
       PMSM_MC_2025a_DW.Delay_DSTATE = rtb_Product_ik;
     }
 
-    /* Sum: '<S140>/Add1' incorporates:
-     *  Delay: '<S140>/Delay'
-     *  Product: '<S140>/Product'
-     *  Product: '<S140>/Product1'
+    /* Sum: '<S143>/Add1' incorporates:
+     *  Delay: '<S143>/Delay'
+     *  Product: '<S143>/Product'
+     *  Product: '<S143>/Product1'
      */
     MotorActSpd = PMSM_MC_2025a_ConstB.Add * PMSM_MC_2025a_DW.Delay_DSTATE +
       rtb_Product_ik;
 
-    /* Switch: '<S144>/Switch2' incorporates:
+    /* Switch: '<S147>/Switch2' incorporates:
      *  Constant: '<S137>/Constant4'
      *  Gain: '<S137>/Gain1'
      *  Inport: '<Root>/MotorSpdRef'
-     *  RelationalOperator: '<S144>/LowerRelop1'
-     *  RelationalOperator: '<S144>/UpperRelop'
-     *  Switch: '<S144>/Switch'
+     *  RelationalOperator: '<S147>/LowerRelop1'
+     *  RelationalOperator: '<S147>/UpperRelop'
+     *  Switch: '<S147>/Switch'
      */
-    if (MotorSpdRef > 5000) {
-      tmp_2 = 5000;
+    if (MotorSpdRef > 2000) {
+      tmp_2 = 2000;
     } else if ((MotorSpdRef << 15) < PMSM_MC_2025a_ConstB.Gain1) {
-      /* Switch: '<S144>/Switch' incorporates:
+      /* Switch: '<S147>/Switch' incorporates:
        *  Gain: '<S137>/Gain1'
        */
       tmp_2 = (int16_T)(PMSM_MC_2025a_ConstB.Gain1 >> 15);
@@ -542,53 +567,53 @@ void PMSM_MC_2025a_step(void)
 
     /* Sum: '<S137>/Minus' incorporates:
      *  DataTypeConversion: '<S137>/Data Type Conversion'
-     *  Switch: '<S144>/Switch2'
+     *  Switch: '<S147>/Switch2'
      */
     rtb_Product_ik = (real32_T)tmp_2 - MotorActSpd;
 
-    /* Sum: '<S188>/Sum' incorporates:
+    /* Sum: '<S191>/Sum' incorporates:
      *  Constant: '<S137>/Constant2'
-     *  DiscreteIntegrator: '<S179>/Integrator'
-     *  Product: '<S184>/PProd Out'
+     *  DiscreteIntegrator: '<S182>/Integrator'
+     *  Product: '<S187>/PProd Out'
      */
     PMSM_MC_2025a_B.Switch2 = rtb_Product_ik * MC_SpdLopKp_CFG +
       PMSM_MC_2025a_DW.Integrator_DSTATE_dr;
 
-    /* Switch: '<S143>/Switch2' incorporates:
+    /* Switch: '<S146>/Switch2' incorporates:
      *  Constant: '<S137>/Constant1'
-     *  RelationalOperator: '<S143>/LowerRelop1'
-     *  RelationalOperator: '<S143>/UpperRelop'
-     *  Switch: '<S143>/Switch'
+     *  RelationalOperator: '<S146>/LowerRelop1'
+     *  RelationalOperator: '<S146>/UpperRelop'
+     *  Switch: '<S146>/Switch'
      */
-    if (PMSM_MC_2025a_B.Switch2 > 6.0F) {
-      /* Sum: '<S188>/Sum' incorporates:
-       *  Switch: '<S143>/Switch2'
+    if (PMSM_MC_2025a_B.Switch2 > 3.0F) {
+      /* Sum: '<S191>/Sum' incorporates:
+       *  Switch: '<S146>/Switch2'
        */
-      PMSM_MC_2025a_B.Switch2 = 6.0F;
+      PMSM_MC_2025a_B.Switch2 = 3.0F;
     } else if (PMSM_MC_2025a_B.Switch2 < PMSM_MC_2025a_ConstB.Gain) {
-      /* Sum: '<S188>/Sum' incorporates:
-       *  Switch: '<S143>/Switch'
-       *  Switch: '<S143>/Switch2'
+      /* Sum: '<S191>/Sum' incorporates:
+       *  Switch: '<S146>/Switch'
+       *  Switch: '<S146>/Switch2'
        */
       PMSM_MC_2025a_B.Switch2 = PMSM_MC_2025a_ConstB.Gain;
     }
 
-    /* End of Switch: '<S143>/Switch2' */
+    /* End of Switch: '<S146>/Switch2' */
 
-    /* Update for DiscreteIntegrator: '<S179>/Integrator' incorporates:
+    /* Update for DiscreteIntegrator: '<S182>/Integrator' incorporates:
      *  Constant: '<S137>/Constant3'
-     *  Product: '<S176>/IProd Out'
+     *  Product: '<S179>/IProd Out'
      */
     PMSM_MC_2025a_DW.Integrator_DSTATE_dr += rtb_Product_ik * MC_SpdLopKi_CFG;
-    if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr > 6.0F) {
-      PMSM_MC_2025a_DW.Integrator_DSTATE_dr = 6.0F;
-    } else if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr < -6.0F) {
-      PMSM_MC_2025a_DW.Integrator_DSTATE_dr = -6.0F;
+    if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr > 3.0F) {
+      PMSM_MC_2025a_DW.Integrator_DSTATE_dr = 3.0F;
+    } else if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr < -3.0F) {
+      PMSM_MC_2025a_DW.Integrator_DSTATE_dr = -3.0F;
     }
 
     PMSM_MC_2025a_DW.Integrator_PrevResetState_n = (int8_T)rtb_Compare_j;
 
-    /* End of Update for DiscreteIntegrator: '<S179>/Integrator' */
+    /* End of Update for DiscreteIntegrator: '<S182>/Integrator' */
 
     /* Update for Delay: '<S136>/Delay' incorporates:
      *  Inport: '<Root>/Ecode_cnt'
@@ -596,7 +621,7 @@ void PMSM_MC_2025a_step(void)
     PMSM_MC_2025a_DW.icLoad = false;
     PMSM_MC_2025a_DW.Delay_DSTATE_a = Ecode_cnt;
 
-    /* Update for Delay: '<S140>/Delay' */
+    /* Update for Delay: '<S143>/Delay' */
     PMSM_MC_2025a_DW.icLoad_d = false;
     PMSM_MC_2025a_DW.Delay_DSTATE = MotorActSpd;
 
@@ -609,13 +634,13 @@ void PMSM_MC_2025a_step(void)
   /* Sum: '<S5>/Add' incorporates:
    *  Inport: '<Root>/Ecode_cnt'
    */
-  rtb_Add_c2 = Ecode_cnt - PMSM_MC_2025a_B.MotOffset;
+  rtb_Minus_e = Ecode_cnt - PMSM_MC_2025a_B.MotOffset;
 
   /* Signum: '<S8>/Sign' */
-  if (rtb_Add_c2 < 0) {
+  if (rtb_Minus_e < 0) {
     rtb_Sign_e = -1;
   } else {
-    rtb_Sign_e = (rtb_Add_c2 > 0);
+    rtb_Sign_e = (rtb_Minus_e > 0);
   }
 
   /* End of Signum: '<S8>/Sign' */
@@ -636,8 +661,8 @@ void PMSM_MC_2025a_step(void)
      *  Product: '<S9>/Product'
      *  Product: '<S9>/Product1'
      */
-    rtb_Product_ik = (real32_T)(rtb_Add_c2 - (div_s32_floor(rtb_Add_c2, 16384) <<
-      14)) / 16384.0F * 6.28F * (real32_T)MC_POLE_NUM_CFG;
+    rtb_Product_ik = (real32_T)(rtb_Minus_e - (div_s32_floor(rtb_Minus_e, 16384)
+      << 14)) / 16384.0F * 6.28F * (real32_T)MC_POLE_NUM_CFG;
 
     /* End of Outputs for SubSystem: '<S8>/If Action Subsystem' */
   } else if (rtb_Sign_e == -1) {
@@ -646,12 +671,12 @@ void PMSM_MC_2025a_step(void)
      */
     /* Gain: '<S10>/Gain' */
     elapsedTicks = 2147483648U;
-    tmp_1 = (uint32_T)rtb_Add_c2;
+    tmp_1 = (uint32_T)rtb_Minus_e;
     sMultiWordMul(&elapsedTicks, 1, &tmp_1, 1, &tmp_0.chunks[0U], 2);
 
     /* DataTypeConversion: '<S10>/Data Type Conversion3' */
     sMultiWordShr(&tmp_0.chunks[0U], 2, 31U, &tmp.chunks[0U], 2);
-    rtb_Add_c2 = MultiWord2sLong(&tmp.chunks[0U]);
+    rtb_Minus_e = MultiWord2sLong(&tmp.chunks[0U]);
 
     /* Gain: '<S10>/Gain1' incorporates:
      *  Constant: '<S10>/Constant'
@@ -664,8 +689,8 @@ void PMSM_MC_2025a_step(void)
      *  Product: '<S10>/Product'
      *  Product: '<S10>/Product1'
      */
-    rtb_Product_ik = -((real32_T)(rtb_Add_c2 - (div_s32_floor(rtb_Add_c2, 16384)
-      << 14)) / 16384.0F * 6.28F * (real32_T)MC_POLE_NUM_CFG);
+    rtb_Product_ik = -((real32_T)(rtb_Minus_e - (div_s32_floor(rtb_Minus_e,
+      16384) << 14)) / 16384.0F * 6.28F * (real32_T)MC_POLE_NUM_CFG);
 
     /* End of Outputs for SubSystem: '<S8>/If Action Subsystem1' */
   } else {
@@ -717,10 +742,10 @@ void PMSM_MC_2025a_step(void)
     } else {
       if (rtb_Product_ik < 0.0F) {
         /* Signum: '<S14>/Sign' */
-        rtb_Add_c2 = -1;
+        rtb_Minus_e = -1;
       } else {
         /* Signum: '<S14>/Sign' */
-        rtb_Add_c2 = (rtb_Product_ik > 0.0F);
+        rtb_Minus_e = (rtb_Product_ik > 0.0F);
       }
 
       /* Switch: '<S14>/Switch' incorporates:
@@ -733,7 +758,7 @@ void PMSM_MC_2025a_step(void)
        *  Signum: '<S14>/Sign'
        *  Sum: '<S14>/Add'
        */
-      if (rtb_Add_c2 > 0) {
+      if (rtb_Minus_e > 0) {
         rtb_Product3_l = rt_modf_snf(fabsf(rtb_Product_ik), 6.28F);
       } else {
         rtb_Product3_l = 6.28F - rt_modf_snf(fabsf(rtb_Product_ik), 6.28F);
@@ -1333,22 +1358,22 @@ void PMSM_MC_2025a_initialize(void)
   /* SystemInitialize for Chart: '<Root>/Scheduler' incorporates:
    *  SubSystem: '<S1>/MC_LowFrqTask'
    */
-  /* InitializeConditions for DiscreteIntegrator: '<S179>/Integrator' */
+  /* InitializeConditions for DiscreteIntegrator: '<S182>/Integrator' */
   PMSM_MC_2025a_DW.Integrator_DSTATE_dr = PMSM_MC_2025a_ConstB.Constant;
-  if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr > 6.0F) {
-    PMSM_MC_2025a_DW.Integrator_DSTATE_dr = 6.0F;
-  } else if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr < -6.0F) {
-    PMSM_MC_2025a_DW.Integrator_DSTATE_dr = -6.0F;
+  if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr > 3.0F) {
+    PMSM_MC_2025a_DW.Integrator_DSTATE_dr = 3.0F;
+  } else if (PMSM_MC_2025a_DW.Integrator_DSTATE_dr < -3.0F) {
+    PMSM_MC_2025a_DW.Integrator_DSTATE_dr = -3.0F;
   }
 
   PMSM_MC_2025a_DW.Integrator_PrevResetState_n = 2;
 
-  /* End of InitializeConditions for DiscreteIntegrator: '<S179>/Integrator' */
+  /* End of InitializeConditions for DiscreteIntegrator: '<S182>/Integrator' */
 
   /* InitializeConditions for Delay: '<S136>/Delay' */
   PMSM_MC_2025a_DW.icLoad = true;
 
-  /* InitializeConditions for Delay: '<S140>/Delay' */
+  /* InitializeConditions for Delay: '<S143>/Delay' */
   PMSM_MC_2025a_DW.icLoad_d = true;
 
   /* SystemInitialize for Chart: '<Root>/Scheduler' incorporates:

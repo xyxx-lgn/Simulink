@@ -489,9 +489,9 @@ void pwm_set(float U_PWM,float V_PWM,float W_PWM)
 {
 	uint16_t U_ccr,V_ccr,W_ccr;
 	
-	U_ccr = (uint16_t)((1-U_PWM)*4250);
-	V_ccr = (uint16_t)((1-V_PWM)*4250);
-	W_ccr = (uint16_t)((1-W_PWM)*4250);
+	U_ccr = (uint16_t)((U_PWM)*4250);
+	V_ccr = (uint16_t)((V_PWM)*4250);
+	W_ccr = (uint16_t)((W_PWM)*4250);
 	
 	// 三相PWM占空比赋值
 	TIM1->CCR1 = (uint32_t)U_ccr;

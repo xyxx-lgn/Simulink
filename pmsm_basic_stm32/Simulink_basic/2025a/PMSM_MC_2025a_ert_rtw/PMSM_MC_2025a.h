@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'PMSM_MC_2025a'.
  *
- * Model version                  : 5.4
+ * Model version                  : 5.8
  * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
- * C/C++ source code generated on : Fri Oct  9 20:27:07 2026
+ * C/C++ source code generated on : Sat Oct 10 17:06:19 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -36,7 +36,7 @@
 
 /* Block signals (default storage) */
 typedef struct {
-  real32_T Switch2;                    /* '<S143>/Switch2' */
+  real32_T Switch2;                    /* '<S146>/Switch2' */
   real32_T MotCalThetae;               /* '<S135>/Chart' */
   int32_T MotOffset;                   /* '<S135>/Chart' */
   uint8_T Switch;                      /* '<S135>/Switch' */
@@ -46,8 +46,8 @@ typedef struct {
 typedef struct {
   real32_T Integrator_DSTATE;          /* '<S57>/Integrator' */
   real32_T Integrator_DSTATE_d;        /* '<S109>/Integrator' */
-  real32_T Integrator_DSTATE_dr;       /* '<S179>/Integrator' */
-  real32_T Delay_DSTATE;               /* '<S140>/Delay' */
+  real32_T Integrator_DSTATE_dr;       /* '<S182>/Integrator' */
+  real32_T Delay_DSTATE;               /* '<S143>/Delay' */
   int32_T Delay_DSTATE_a;              /* '<S136>/Delay' */
   int32_T MotOffsetBuff[2];            /* '<S135>/Chart' */
   uint32_T counter;                    /* '<Root>/Scheduler' */
@@ -55,13 +55,13 @@ typedef struct {
   uint16_T temporalCounter_i1;         /* '<S135>/Chart' */
   int8_T Integrator_PrevResetState;    /* '<S57>/Integrator' */
   int8_T Integrator_PrevResetState_o;  /* '<S109>/Integrator' */
-  int8_T Integrator_PrevResetState_n;  /* '<S179>/Integrator' */
+  int8_T Integrator_PrevResetState_n;  /* '<S182>/Integrator' */
   uint8_T is_active_c1_PMSM_MC_2025a;  /* '<S135>/Chart' */
   uint8_T is_c1_PMSM_MC_2025a;         /* '<S135>/Chart' */
   uint8_T is_Calibrate;                /* '<S135>/Chart' */
   uint8_T is_Normal;                   /* '<S135>/Chart' */
   boolean_T icLoad;                    /* '<S136>/Delay' */
-  boolean_T icLoad_d;                  /* '<S140>/Delay' */
+  boolean_T icLoad_d;                  /* '<S143>/Delay' */
   boolean_T MotCalNormal;              /* '<S135>/Chart' */
 } DW_PMSM_MC_2025a_T;
 
@@ -69,7 +69,7 @@ typedef struct {
 typedef struct {
   const real32_T Constant4;            /* '<S13>/Constant4' */
   const real32_T Constant5;            /* '<S13>/Constant5' */
-  const real32_T Add;                  /* '<S140>/Add' */
+  const real32_T Add;                  /* '<S143>/Add' */
   const real32_T Constant;             /* '<S137>/Constant' */
   const real32_T Gain;                 /* '<S137>/Gain' */
   const int32_T Gain1;                 /* '<S137>/Gain1' */
@@ -113,7 +113,7 @@ extern real32_T VBus_Sample;           /* '<Root>/VBus_Sample' */
 extern real32_T UVoltage_PWM;          /* '<S3>/Saturation' */
 extern real32_T VVoltage_PWM;          /* '<S3>/Saturation1' */
 extern real32_T WVoltage_PWM;          /* '<S3>/Saturation2' */
-extern real32_T MotorActSpd;           /* '<S140>/Add1' */
+extern real32_T MotorActSpd;           /* '<S143>/Add1' */
 extern boolean_T SD_MosCtr;            /* '<S3>/Merge' */
 
 /*
@@ -166,10 +166,10 @@ extern RT_MODEL_PMSM_MC_2025a_T *const PMSM_MC_2025a_M;
  * Block '<S21>/Data Type Propagation' : Unused code path elimination
  * Block '<S22>/Data Type Duplicate' : Unused code path elimination
  * Block '<S22>/Data Type Propagation' : Unused code path elimination
- * Block '<S143>/Data Type Duplicate' : Unused code path elimination
- * Block '<S143>/Data Type Propagation' : Unused code path elimination
- * Block '<S144>/Data Type Duplicate' : Unused code path elimination
- * Block '<S144>/Data Type Propagation' : Unused code path elimination
+ * Block '<S146>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S146>/Data Type Propagation' : Unused code path elimination
+ * Block '<S147>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S147>/Data Type Propagation' : Unused code path elimination
  * Block '<S9>/Data Type Conversion2' : Eliminate redundant data type conversion
  * Block '<S10>/Data Type Conversion2' : Eliminate redundant data type conversion
  */
@@ -328,63 +328,66 @@ extern RT_MODEL_PMSM_MC_2025a_T *const PMSM_MC_2025a_M;
  * '<S137>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop'
  * '<S138>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/MotModeCtr/Chart'
  * '<S139>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/MotModeCtr/Compare To Constant'
- * '<S140>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/MotSpdCal/LPF'
- * '<S141>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Compare To Constant'
- * '<S142>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller'
- * '<S143>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Saturation Dynamic'
- * '<S144>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Saturation Dynamic1'
- * '<S145>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Anti-windup'
- * '<S146>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/D Gain'
- * '<S147>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/External Derivative'
- * '<S148>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter'
- * '<S149>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter ICs'
- * '<S150>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/I Gain'
- * '<S151>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain'
- * '<S152>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain Fdbk'
- * '<S153>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator'
- * '<S154>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator ICs'
- * '<S155>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Copy'
- * '<S156>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Gain'
- * '<S157>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/P Copy'
- * '<S158>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Parallel P Gain'
- * '<S159>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Reset Signal'
- * '<S160>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation'
- * '<S161>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation Fdbk'
- * '<S162>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum'
- * '<S163>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum Fdbk'
- * '<S164>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode'
- * '<S165>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode Sum'
- * '<S166>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Integral'
- * '<S167>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Ngain'
- * '<S168>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/postSat Signal'
- * '<S169>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preInt Signal'
- * '<S170>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preSat Signal'
- * '<S171>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Anti-windup/Passthrough'
- * '<S172>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/D Gain/Disabled'
- * '<S173>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/External Derivative/Disabled'
- * '<S174>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter/Disabled'
- * '<S175>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter ICs/Disabled'
- * '<S176>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/I Gain/External Parameters'
- * '<S177>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain/Passthrough'
- * '<S178>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain Fdbk/Disabled'
- * '<S179>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator/Discrete'
- * '<S180>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator ICs/External IC'
- * '<S181>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Copy/Disabled wSignal Specification'
- * '<S182>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Gain/Disabled'
- * '<S183>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/P Copy/Disabled'
- * '<S184>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Parallel P Gain/External Parameters'
- * '<S185>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Reset Signal/External Reset'
- * '<S186>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation/Passthrough'
- * '<S187>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation Fdbk/Disabled'
- * '<S188>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum/Sum_PI'
- * '<S189>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum Fdbk/Disabled'
- * '<S190>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode/Disabled'
- * '<S191>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode Sum/Passthrough'
- * '<S192>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Integral/TsSignalSpecification'
- * '<S193>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Ngain/Passthrough'
- * '<S194>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/postSat Signal/Forward_Path'
- * '<S195>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preInt Signal/Internal PreInt'
- * '<S196>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preSat Signal/Forward_Path'
+ * '<S140>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/MotSpdCal/If Action Subsystem'
+ * '<S141>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/MotSpdCal/If Action Subsystem1'
+ * '<S142>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/MotSpdCal/If Action Subsystem2'
+ * '<S143>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/MotSpdCal/LPF'
+ * '<S144>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Compare To Constant'
+ * '<S145>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller'
+ * '<S146>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Saturation Dynamic'
+ * '<S147>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Saturation Dynamic1'
+ * '<S148>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Anti-windup'
+ * '<S149>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/D Gain'
+ * '<S150>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/External Derivative'
+ * '<S151>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter'
+ * '<S152>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter ICs'
+ * '<S153>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/I Gain'
+ * '<S154>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain'
+ * '<S155>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain Fdbk'
+ * '<S156>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator'
+ * '<S157>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator ICs'
+ * '<S158>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Copy'
+ * '<S159>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Gain'
+ * '<S160>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/P Copy'
+ * '<S161>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Parallel P Gain'
+ * '<S162>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Reset Signal'
+ * '<S163>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation'
+ * '<S164>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation Fdbk'
+ * '<S165>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum'
+ * '<S166>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum Fdbk'
+ * '<S167>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode'
+ * '<S168>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode Sum'
+ * '<S169>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Integral'
+ * '<S170>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Ngain'
+ * '<S171>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/postSat Signal'
+ * '<S172>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preInt Signal'
+ * '<S173>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preSat Signal'
+ * '<S174>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Anti-windup/Passthrough'
+ * '<S175>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/D Gain/Disabled'
+ * '<S176>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/External Derivative/Disabled'
+ * '<S177>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter/Disabled'
+ * '<S178>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Filter ICs/Disabled'
+ * '<S179>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/I Gain/External Parameters'
+ * '<S180>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain/Passthrough'
+ * '<S181>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Ideal P Gain Fdbk/Disabled'
+ * '<S182>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator/Discrete'
+ * '<S183>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Integrator ICs/External IC'
+ * '<S184>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Copy/Disabled wSignal Specification'
+ * '<S185>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/N Gain/Disabled'
+ * '<S186>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/P Copy/Disabled'
+ * '<S187>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Parallel P Gain/External Parameters'
+ * '<S188>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Reset Signal/External Reset'
+ * '<S189>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation/Passthrough'
+ * '<S190>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Saturation Fdbk/Disabled'
+ * '<S191>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum/Sum_PI'
+ * '<S192>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Sum Fdbk/Disabled'
+ * '<S193>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode/Disabled'
+ * '<S194>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tracking Mode Sum/Passthrough'
+ * '<S195>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Integral/TsSignalSpecification'
+ * '<S196>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/Tsamp - Ngain/Passthrough'
+ * '<S197>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/postSat Signal/Forward_Path'
+ * '<S198>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preInt Signal/Internal PreInt'
+ * '<S199>' : 'PMSM_MC_2025a/PMSM_MC/MC_LowFrqTask/SpdLoop/Discrete PID Controller/preSat Signal/Forward_Path'
  */
 #endif                                 /* PMSM_MC_2025a_h_ */
 

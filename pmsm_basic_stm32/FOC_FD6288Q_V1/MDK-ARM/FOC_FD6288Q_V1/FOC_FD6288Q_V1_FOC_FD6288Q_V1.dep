@@ -63,11 +63,11 @@ I (./Hardware/Filter/Filter.h)(0x6AC88544)
 I (./Software/Start/Start.h)(0x6AC88544)
 I (./Hardware/My_Can/My_Can.h)(0x6AC88544)
 I (./Hardware/MT6701/MT6701.h)(0x6AC88544)
-I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6AC8DDA4)
-I (.\Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6AC8DDA4)
-I (.\Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6AC8DDA0)
-I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6AC8DDA4)
-I (.\Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6AC8DDA0)
+I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6ACA0012)
+I (.\Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6ACA0012)
+I (.\Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6ACA000F)
+I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6ACA0012)
+I (.\Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6ACA000F)
 F (../Core/Src/gpio.c)(0x6AC88541)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\gpio.o --omf_browse foc_fd6288q_v1\gpio.crf --depend foc_fd6288q_v1\gpio.d)
 I (../Core/Inc/gpio.h)(0x6AC88541)
 I (../Core/Inc/main.h)(0x6AC88541)
@@ -819,7 +819,7 @@ I (../Core/Inc/usart.h)(0x6AC88541)
 I (./Software/Start/Start.h)(0x6AC88544)
 I (./Hardware/My_Can/My_Can.h)(0x6AC88544)
 F (.\Hardware\MT6701\MT6701.h)(0x6AC88544)()
-F (.\Hardware\Motor\Motor.c)(0x6AC8EDA0)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\motor.o --omf_browse foc_fd6288q_v1\motor.crf --depend foc_fd6288q_v1\motor.d)
+F (.\Hardware\Motor\Motor.c)(0x6AC9F312)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\motor.o --omf_browse foc_fd6288q_v1\motor.crf --depend foc_fd6288q_v1\motor.d)
 I (Hardware\Motor\Motor.h)(0x6AC8D90B)
 I (./Hardware/ALL_H.h)(0x6AC88544)
 I (../Core/Inc/main.h)(0x6AC88541)
@@ -883,11 +883,11 @@ I (../Core/Inc/spi.h)(0x6AC88541)
 I (./Software/FOC/FOC.h)(0x6AC88544)
 I (./Software/PID/PID.h)(0x6AC88544)
 I (../Core/Inc/fdcan.h)(0x6AC88541)
-I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6AC8DDA4)
-I (.\Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6AC8DDA4)
-I (.\Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6AC8DDA0)
-I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6AC8DDA4)
-I (.\Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6AC8DDA0)
+I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6ACA0012)
+I (.\Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6ACA0012)
+I (.\Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6ACA000F)
+I (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6ACA0012)
+I (.\Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6ACA000F)
 F (.\Hardware\Motor\Motor.h)(0x6AC8D90B)()
 F (.\Hardware\My_Cordic\My_Cordic.c)(0x6AC88544)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\my_cordic.o --omf_browse foc_fd6288q_v1\my_cordic.crf --depend foc_fd6288q_v1\my_cordic.d)
 I (Hardware\My_Cordic\my_cordic.h)(0x6AC88544)
@@ -1053,28 +1053,28 @@ I (./Software/Start/Start.h)(0x6AC88544)
 I (./Hardware/My_Can/My_Can.h)(0x6AC88544)
 I (../Core/Inc/fdcan.h)(0x6AC88541)
 F (.\Hardware\My_Can\My_Can.h)(0x6AC88544)()
-F (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c)(0x6AC8DDA4)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\pmsm_mc_2025a.o --omf_browse foc_fd6288q_v1\pmsm_mc_2025a.crf --depend foc_fd6288q_v1\pmsm_mc_2025a.d)
-I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6AC8DDA0)
+F (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c)(0x6ACA0012)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\pmsm_mc_2025a.o --omf_browse foc_fd6288q_v1\pmsm_mc_2025a.crf --depend foc_fd6288q_v1\pmsm_mc_2025a.d)
+I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6ACA000F)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5D9B3482)
-I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6AC8DDA0)
-I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_private.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\multiword_types.h)(0x6AC8DDA4)
+I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6ACA000F)
+I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_private.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\multiword_types.h)(0x6ACA0012)
 I (C:\Keil_v5\ARM\ARMCC\include\limits.h)(0x5D9B3482)
 I (C:\Keil_v5\ARM\ARMCC\include\float.h)(0x5D9B3488)
-F (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6AC8DDA4)()
-F (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_data.c)(0x6AC8DDA4)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\pmsm_mc_2025a_data.o --omf_browse foc_fd6288q_v1\pmsm_mc_2025a_data.crf --depend foc_fd6288q_v1\pmsm_mc_2025a_data.d)
-I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6AC8DDA0)
+F (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6ACA0012)()
+F (.\Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_data.c)(0x6ACA0012)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\pmsm_mc_2025a_data.o --omf_browse foc_fd6288q_v1\pmsm_mc_2025a_data.crf --depend foc_fd6288q_v1\pmsm_mc_2025a_data.d)
+I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6ACA000F)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5D9B3482)
-I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6AC8DDA0)
-F (.\Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.c)(0x6AC8DDA4)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\rt_nonfinite.o --omf_browse foc_fd6288q_v1\rt_nonfinite.crf --depend foc_fd6288q_v1\rt_nonfinite.d)
-I (Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6AC8DDA4)
-I (Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6AC8DDA0)
+I (Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a_types.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\rtGetNaN.h)(0x6ACA000F)
+F (.\Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.c)(0x6ACA0012)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\rt_nonfinite.o --omf_browse foc_fd6288q_v1\rt_nonfinite.crf --depend foc_fd6288q_v1\rt_nonfinite.d)
+I (Model\PMSM_MC_2025a_ert_rtw\rtwtypes.h)(0x6ACA0012)
+I (Model\PMSM_MC_2025a_ert_rtw\rt_nonfinite.h)(0x6ACA000F)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5D9B3482)
 F (../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c)(0x67DD529C)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/ST/ARM/DSP/Inc -I ./Hardware -I ./Software -I ./Hardware/MT6701 -I ./Hardware/Motor -I ./Software/Start -I ./Software/FOC -I ./Software/PID -I ./Software/Test -I ./Hardware/My_Cordic -I ./Hardware/My_Can -I ./Hardware/Filter -I .\Model\PMSM_MC_2025a_ert_rtw-I.\RTE\_FOC_FD6288Q_V1-IC:\Users\xiaoy\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\xiaoy\AppData\Local\Arm\Packs\Keil\STM32G4xx_DFP\1.2.1\Drivers\CMSIS\Device\ST\STM32G4xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32G431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G431xx-o foc_fd6288q_v1\stm32g4xx_hal_adc.o --omf_browse foc_fd6288q_v1\stm32g4xx_hal_adc.crf --depend foc_fd6288q_v1\stm32g4xx_hal_adc.d)
 I (../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h)(0x67DD529C)

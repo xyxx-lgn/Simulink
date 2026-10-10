@@ -1,10 +1,47 @@
-# MATLAB / Simulink 自动生成文件
+# MATLAB / Simulink 缓存与临时文件
 slprj/
 *.slxc
-*/_ert_rtw/        # 所有代码生成输出
-*.mk
-*.rsp
-*.bat
-*.obj
-*.exe
+*.autosave
+*.asv
+*.slx.bak
+*.mdl.bak
+
+# 生成目录中只保留根目录下的 C 源码和头文件
+# 不要把整个 *_ert_rtw 目录忽略，Keil 需要其中的源码
+**/*_ert_rtw/*
+!**/*_ert_rtw/*.c
+!**/*_ert_rtw/*.h
+
+# 本工程的 Keil 编译输出目录
+/pmsm_basic_stm32/FOC_FD6288Q_V1/MDK-ARM/FOC_FD6288Q_V1/
+
+# 编译产物
 *.o
+*.obj
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.crf
+*.d
+*.dep
+*.lnp
+*.lst
+*.build_log.htm
+
+# Keil 个人界面与调试设置
+*.uvguix.*
+*.uvoptx
+
+# J-Link 日志
+JLinkLog.txt
+JLinkLog*.txt
+JLinkSettings.ini
+
+# 日常采集数据
+/pmsm_basic_stm32/FOC_FD6288Q_V1/Jlink/*.csv
+/pmsm_basic_stm32/FOC_FD6288Q_V1/Jlink/*.jraw
+
+# 可执行文件
+*.exe
