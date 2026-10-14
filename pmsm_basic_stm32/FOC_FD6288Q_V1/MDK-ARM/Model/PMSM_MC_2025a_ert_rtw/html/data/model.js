@@ -1,1 +1,0 @@
-var modelInfo = {model:"PMSM_MC_2025a"};var modelHierarchy=[{model:"PMSM_MC_2025a",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;
