@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'PMSM_MC_2025a'.
  *
- * Model version                  : 5.8
+ * Model version                  : 5.13
  * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
- * C/C++ source code generated on : Sat Oct 10 17:06:19 2026
+ * C/C++ source code generated on : Wed Oct 14 22:22:18 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -68,11 +68,15 @@ preprocessor word size checks.
 #endif
 
 extern real32_T rt_modf_snf(real32_T u0, real32_T u1);
+extern void sMultiWordShl(const uint32_T u1[], int32_T n1, uint32_T n2, uint32_T
+  y[], int32_T n);
+extern void sLong2MultiWord(int32_T u, uint32_T y[], int32_T n);
+extern void sMultiWordMul(const uint32_T u1[], int32_T n1, const uint32_T u2[],
+  int32_T n2, uint32_T y[], int32_T n);
+extern real32_T sMultiWord2Single(const uint32_T u1[], int32_T n1, int32_T e1);
 extern int32_T MultiWord2sLong(const uint32_T u[]);
 extern void sMultiWordShr(const uint32_T u1[], int32_T n1, uint32_T n2, uint32_T
   y[], int32_T n);
-extern void sMultiWordMul(const uint32_T u1[], int32_T n1, const uint32_T u2[],
-  int32_T n2, uint32_T y[], int32_T n);
 extern int32_T div_s32_floor(int32_T numerator, int32_T denominator);
 
 #endif                                 /* PMSM_MC_2025a_private_h_ */

@@ -20,7 +20,7 @@ float theta=0,Iwidth=300;  //电流环带宽测试变量，不用时屏蔽
 void Data_Init(void)
 {
 	//adcvalue结构体初始化
-	adcvalue.supply_Udc=22.2f;           //输入电压值最大值
+	adcvalue.supply_Udc=24.0f;           //输入电压值最大值
 	adcvalue.supply_IMax=6.0f;          //电流最大值    (3.3/2) =1.65  1.65/50/Rs = 1.65/50/0.05 = 6.6A相电流采样最大值
 	adcvalue.motor_gear=1.0f;           //电机减速比
 	adcvalue.motor_phaseL=0.000344f;     //电机相电感
@@ -227,14 +227,14 @@ void Adc_Task(AdcValue *adcvalue,AllFlag *allflag,uint16_t *adc_raw)
 //		adcvalue->Ic = ((adcvalue->Ic_Sample*3.3f/4096.0f-adcvalue->Ic_offect)/adcvalue->Gain_I);   //三电阻采样
 		adcvalue->Ic = -(adcvalue->Ia+adcvalue->Ib);                                                 //双电阻采样
 		
-        if(adcvalue->Udc>adcvalue->supply_Udc+1.0f)   //防止意外超出
+        if(adcvalue->Udc>adcvalue->supply_Udc+2.0f)   //防止意外超出
 			adcvalue->Udc=adcvalue->supply_Udc;
 		svpwm_str.Udc = adcvalue->Udc*0.9f;
 		pid_m1.Ki_SumMax = svpwm_str.Udc*one_sqrt3;    //1/sqrt(3)*0.8
 	}
 	
 	//2.过压或欠压报警 //不能再重新校准ABC三相的偏置值了，否则三相电流值会相差很大
-	if(adcvalue->Udc>(adcvalue->supply_Udc+1.0f) || adcvalue->Udc<(adcvalue->supply_Udc-8.0f)) //电压预警
+	if(adcvalue->Udc>(adcvalue->supply_Udc+2.0f) || adcvalue->Udc<(adcvalue->supply_Udc-8.0f)) //电压预警
 	{
 		allflag->Erro_flag = 1;
 	}
@@ -500,6 +500,9 @@ void pwm_set(float U_PWM,float V_PWM,float W_PWM)
 	
 }
 
+
+volatile uint32_t model_ticks_probe = 0;
+
 //Simulink模型运行任务
 void Simulink_Task()
 {
@@ -514,7 +517,10 @@ void Simulink_Task()
 	Ecode_cnt = MT6701_ReadRaw();//10us
 	
 	if(allflag.Adc_Adjust_flag==1)
-		PMSM_MC_2025a_step();
+	{
+    PMSM_MC_2025a_step();
+    model_ticks_probe = PMSM_MC_2025a_M->Timing.clockTick0;
+	}
 	
 	
 	pwm_set(UVoltage_PWM,VVoltage_PWM,WVoltage_PWM);
