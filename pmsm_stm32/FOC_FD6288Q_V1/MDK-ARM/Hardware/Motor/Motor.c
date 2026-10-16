@@ -501,11 +501,12 @@ void pwm_set(float U_PWM,float V_PWM,float W_PWM)
 }
 
 
-volatile uint32_t model_ticks_probe = 0;
+//volatile uint32_t model_ticks_probe = 0;
 
 //Simulink模型运行任务
 void Simulink_Task()
 {
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_SET);
 	Adc_Task(&adcvalue,&allflag,ADC1InjectDate);
 	
 	ACurrent_Sample = adcvalue.Ia;
@@ -518,10 +519,13 @@ void Simulink_Task()
 	
 	if(allflag.Adc_Adjust_flag==1)
 	{
+		
     PMSM_MC_2025a_step();
-    model_ticks_probe = PMSM_MC_2025a_M->Timing.clockTick0;
+		
+//    model_ticks_probe = PMSM_MC_2025a_M->Timing.clockTick0;
 	}
 	
 	
 	pwm_set(UVoltage_PWM,VVoltage_PWM,WVoltage_PWM);
+	HAL_GPIO_WritePin(GPIOB,GPIO_PIN_6,GPIO_PIN_RESET);
 }

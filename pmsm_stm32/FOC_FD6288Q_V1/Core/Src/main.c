@@ -20,11 +20,9 @@
 #include "main.h"
 #include "adc.h"
 #include "cordic.h"
-#include "dma.h"
 #include "fdcan.h"
 #include "spi.h"
 #include "tim.h"
-#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -114,11 +112,9 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
   MX_ADC1_Init();
   MX_SPI1_Init();
   MX_TIM1_Init();
-  MX_USART1_UART_Init();
   MX_CORDIC_Init();
   MX_FDCAN1_Init();
   MX_TIM7_Init();
@@ -147,6 +143,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  
 	  
+		
 //	  encoder_str.Encoder = MT6701_ReadRaw();//10us
 //	allflag.CANFD_Tx_flag=CANFD_Send(0x10,3,encoder_str.Encoder_raw,0,pid_m1.Iq_current);
 	  

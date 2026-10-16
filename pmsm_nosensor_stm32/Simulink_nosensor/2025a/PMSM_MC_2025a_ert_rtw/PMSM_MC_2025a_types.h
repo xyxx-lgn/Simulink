@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'PMSM_MC_2025a'.
  *
- * Model version                  : 5.13
+ * Model version                  : 5.26
  * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
- * C/C++ source code generated on : Wed Oct 14 22:22:18 2026
+ * C/C++ source code generated on : Fri Oct 16 21:56:24 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -15,6 +15,16 @@
 
 #ifndef PMSM_MC_2025a_types_h_
 #define PMSM_MC_2025a_types_h_
+#include "rtwtypes.h"
+#ifndef DEFINED_TYPEDEF_FOR_struct_a3dVKgd8QEg8J0WY6oaYHH_
+#define DEFINED_TYPEDEF_FOR_struct_a3dVKgd8QEg8J0WY6oaYHH_
+
+typedef struct {
+  real32_T Thetae_Est;
+  real32_T We_Est;
+} struct_a3dVKgd8QEg8J0WY6oaYHH;
+
+#endif
 
 /* Forward declaration for rtModel */
 typedef struct tag_RTM_PMSM_MC_2025a_T RT_MODEL_PMSM_MC_2025a_T;

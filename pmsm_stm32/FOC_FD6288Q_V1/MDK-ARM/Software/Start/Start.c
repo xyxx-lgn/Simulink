@@ -75,8 +75,8 @@ void Enable_IT(void)
 //	   }
 
     //2-3.中断与DMA开启
-	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);    
-	HAL_UART_Receive_DMA(&huart1,rx_buffer,100);
+//	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);    
+//	HAL_UART_Receive_DMA(&huart1,rx_buffer,100);
 	
 	//3.定时器1PWM开启
 	//开启定时器1

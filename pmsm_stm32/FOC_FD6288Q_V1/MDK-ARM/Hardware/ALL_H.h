@@ -15,7 +15,7 @@
 #include "arm_math.h"         //DSP库头文件
 #include "my_cordic.h"        //自定义cordic库文件
 #include "Filter.h"           //Fir滤波器
-#include "usart.h"
+//#include "usart.h"
 
 #include "Start.h"
 #include "My_Can.h"

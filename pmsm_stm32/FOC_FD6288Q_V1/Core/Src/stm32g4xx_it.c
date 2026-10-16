@@ -58,9 +58,6 @@
 extern ADC_HandleTypeDef hadc1;
 extern FDCAN_HandleTypeDef hfdcan1;
 extern TIM_HandleTypeDef htim7;
-extern DMA_HandleTypeDef hdma_usart1_tx;
-extern DMA_HandleTypeDef hdma_usart1_rx;
-extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 
 #include "ALL_H.h"
@@ -217,34 +214,6 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles DMA1 channel1 global interrupt.
-  */
-void DMA1_Channel1_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA1_Channel1_IRQn 0 */
-
-  /* USER CODE END DMA1_Channel1_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_usart1_tx);
-  /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
-
-  /* USER CODE END DMA1_Channel1_IRQn 1 */
-}
-
-/**
-  * @brief This function handles DMA1 channel2 global interrupt.
-  */
-void DMA1_Channel2_IRQHandler(void)
-{
-  /* USER CODE BEGIN DMA1_Channel2_IRQn 0 */
-
-  /* USER CODE END DMA1_Channel2_IRQn 0 */
-  HAL_DMA_IRQHandler(&hdma_usart1_rx);
-  /* USER CODE BEGIN DMA1_Channel2_IRQn 1 */
-
-  /* USER CODE END DMA1_Channel2_IRQn 1 */
-}
-
-/**
   * @brief This function handles ADC1 and ADC2 global interrupt.
   */
 void ADC1_2_IRQHandler(void)
@@ -270,30 +239,6 @@ void FDCAN1_IT0_IRQHandler(void)
   /* USER CODE BEGIN FDCAN1_IT0_IRQn 1 */
 
   /* USER CODE END FDCAN1_IT0_IRQn 1 */
-}
-
-/**
-  * @brief This function handles USART1 global interrupt / USART1 wake-up interrupt through EXTI line 25.
-  */
-void USART1_IRQHandler(void)
-{
-  /* USER CODE BEGIN USART1_IRQn 0 */
-
-  /* USER CODE END USART1_IRQn 0 */
-  HAL_UART_IRQHandler(&huart1);
-  /* USER CODE BEGIN USART1_IRQn 1 */
-
-	if (__HAL_UART_GET_FLAG(&huart1,UART_FLAG_IDLE) != RESET)// 通过IDLE标志位判断接收是否结束
-	   { 
-		  __HAL_UART_CLEAR_IDLEFLAG(&huart1);//清除标志位
-		  HAL_UART_DMAStop(&huart1);               
-		  rx_len = 100 - __HAL_DMA_GET_COUNTER(&hdma_usart1_rx); //计算出数据长度
-		  HAL_UART_Transmit_DMA(&huart1, rx_buffer,rx_len);//将收到的数据发送出去
-		  HAL_UART_Receive_DMA(&huart1,rx_buffer,100);//开启DMA接收，方便下一次接收数据
-	   }
-	
-	
-  /* USER CODE END USART1_IRQn 1 */
 }
 
 /**
