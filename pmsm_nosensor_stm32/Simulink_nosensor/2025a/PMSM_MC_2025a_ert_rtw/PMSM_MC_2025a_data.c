@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'PMSM_MC_2025a'.
  *
- * Model version                  : 5.28
+ * Model version                  : 5.30
  * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
- * C/C++ source code generated on : Sun Oct 18 20:07:07 2026
+ * C/C++ source code generated on : Sun Oct 18 22:20:11 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -40,7 +40,7 @@ const ConstB_PMSM_MC_2025a_T PMSM_MC_2025a_ConstB = {
   -0.0112380981F,                      /* '<S206>/Ts' */
   -0.0112380981F,                      /* '<S206>/Ts4' */
   0.9915F,                             /* '<S212>/Add' */
-  7.02243924E-5F,                      /* '<S149>/Math Function2' */
+  6.76E-6F,                            /* '<S149>/Math Function2' */
   0.9915F,                             /* '<S152>/Add' */
   0.0F,                                /* '<S338>/Add' */
   0.0F,                                /* '<S339>/Add' */
