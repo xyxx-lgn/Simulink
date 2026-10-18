@@ -40,8 +40,8 @@ JLinkLog*.txt
 JLinkSettings.ini
 
 # 日常采集数据
-/pmsm_basic_stm32/FOC_FD6288Q_V1/Jlink/*.csv
-/pmsm_basic_stm32/FOC_FD6288Q_V1/Jlink/*.jraw
+/pmsm_stm32/FOC_FD6288Q_V1/Jlink/*.csv
+/pmsm_stm32/FOC_FD6288Q_V1/Jlink/*.jraw
 
 # 可执行文件
 *.exe

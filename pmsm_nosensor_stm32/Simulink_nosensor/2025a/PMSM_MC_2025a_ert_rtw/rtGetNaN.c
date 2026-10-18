@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'PMSM_MC_2025a'.
  *
- * Model version                  : 5.26
+ * Model version                  : 5.28
  * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
- * C/C++ source code generated on : Fri Oct 16 21:56:24 2026
+ * C/C++ source code generated on : Sun Oct 18 20:07:07 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)

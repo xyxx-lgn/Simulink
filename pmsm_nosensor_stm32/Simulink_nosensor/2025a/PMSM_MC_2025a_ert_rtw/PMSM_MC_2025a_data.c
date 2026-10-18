@@ -3,9 +3,9 @@
  *
  * Code generated for Simulink model 'PMSM_MC_2025a'.
  *
- * Model version                  : 5.26
+ * Model version                  : 5.28
  * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
- * C/C++ source code generated on : Fri Oct 16 21:56:24 2026
+ * C/C++ source code generated on : Sun Oct 18 20:07:07 2026
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -19,7 +19,7 @@
 const ConstB_PMSM_MC_2025a_T PMSM_MC_2025a_ConstB = {
   219.911499F,                         /* '<S7>/Gain' */
   0.366519153F,                        /* '<S7>/Gain1' */
-  24.0855446F,                         /* '<S7>/Gain2' */
+  168.598816F,                         /* '<S7>/Gain2' */
   8000.0F,                             /* '<S7>/Gain3' */
   0.0F,                                /* '<S14>/Constant4' */
   0.0F,                                /* '<S14>/Constant5' */
@@ -27,8 +27,8 @@ const ConstB_PMSM_MC_2025a_T PMSM_MC_2025a_ConstB = {
   0.9915F,                             /* '<S270>/Add' */
   0.65F,                               /* '<S324>/Add' */
   0.65F,                               /* '<S325>/Add' */
-  -0.7F,                               /* '<S326>/Gain' */
-  -0.7F,                               /* '<S327>/Gain' */
+  -7.0F,                               /* '<S326>/Gain' */
+  -7.0F,                               /* '<S327>/Gain' */
   176400.0F,                           /* '<S206>/Math Function' */
   29.6352F,                            /* '<S206>/4*Ls' */
   134.4F,                              /* '<S206>/4*Rs' */

@@ -7,13 +7,13 @@
                 <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="0" IsRTTPlus="0" SamplingPeriod="25" SerialNo="0" JTAG_IRPre="0" JTAG_DRPre="0" IP="" TargetDevice="STM32G431CB" TargetInterface="SWD" InterfaceSpeed="4000" />
             </JLink>
             <ElfFile Name="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM\FOC_FD6288Q_V1\FOC_FD6288Q_V1.axf" />
-            <DataFile Name="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\Jlink\测试数据20.csv" />
+            <DataFile Name="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\Jlink\测试1.csv" />
             <RawFile Name="C:\Code\Simulink\pmsm_basic_stm32\FOC_FD6288Q_V1\Jlink\测试数据2.jraw" />
             <Scope>
                 <Options TimeResolutionUs="1000000" />
             </Scope>
             <Trigger>
-                <Options Level="0" Symbol="QAixCurrent" On="0" Auto="0" Rise="0" Fall="0" />
+                <Options Level="0" Symbol="MotorSpdRef" On="0" Auto="0" Rise="0" Fall="0" />
             </Trigger>
         </Configuration>
         <Windows>
@@ -22,34 +22,34 @@
         </Windows>
         <SelectedSymbols>
             <Symbol>
-                <Options Name="QAixCurrent" Address="0x20000078" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="-4.04314" YMaxSampled="3.94096" YAvgSampled="-0.22429" Offset="4" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="QAixCurrent" />
+                <Options Name="MotorSpdRef" Address="0x20000038" Type="short" TypeID="11" Size="2" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="300" YAvgSampled="194.657" Offset="4" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="50" MaxValue="32767" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorSpdRef" />
             </Symbol>
             <Symbol>
-                <Options Name="Thetae_Est" Address="0x2000007C" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="6.28094" YAvgSampled="1.61957" Offset="8" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="Thetae_Est" />
+                <Options Name="QAixCurrent" Address="0x20000078" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="0" YMaxSampled="1.06831" YAvgSampled="0.442955" Offset="6" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="QAixCurrent" />
             </Symbol>
             <Symbol>
-                <Options Name="MotorActSpd_Encode" Address="0x20000084" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-2241.21" YMaxSampled="1007.08" YAvgSampled="19.0444" Offset="12" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="500" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorActSpd_Encode" />
+                <Options Name="Thetae_Est" Address="0x2000007C" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="6.283" YAvgSampled="1.85263" Offset="10" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="Thetae_Est" />
             </Symbol>
             <Symbol>
-                <Options Name="MotorActSpd_Est" Address="0x20000088" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="-9974.96" YMaxSampled="1085.86" YAvgSampled="-3862.2" Offset="16" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="2000" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorActSpd_Est" />
+                <Options Name="MotorActSpd_Encode" Address="0x20000084" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-153.809" YMaxSampled="461.426" YAvgSampled="155.874" Offset="14" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="100" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorActSpd_Encode" />
             </Symbol>
             <Symbol>
-                <Options Name="MotorActSpd" Address="0x2000008C" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-9974.96" YMaxSampled="1085.86" YAvgSampled="-3862.2" Offset="20" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="2000" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorActSpd" />
+                <Options Name="MotorActSpd_Est" Address="0x20000088" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="-374.139" YMaxSampled="417.397" YAvgSampled="223.076" Offset="18" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="100" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="MotorActSpd_Est" />
             </Symbol>
             <Symbol>
-                <Options Name="QAixCurrent_Ref" Address="0x20000090" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="-3" YMaxSampled="3" YAvgSampled="1.21915" Offset="24" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="QAixCurrent_Ref" />
+                <Options Name="QAixCurrent_Ref" Address="0x20000090" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="0.6" YAvgSampled="0.314928" Offset="22" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.c" DrawStyle="0" NameWithParents="QAixCurrent_Ref" />
             </Symbol>
             <Symbol>
-                <Options Name="Thetae_SensLess" Address="0x20000558" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="6.27775" YAvgSampled="0.668554" Offset="28" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_B.Thetae_SensLess" />
+                <Options Name="Thetae_SensLess" Address="0x20000558" Type="float" TypeID="1" Size="4" GraphColorRed="255" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="6.2828" YAvgSampled="1.63181" Offset="26" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_B.Thetae_SensLess" />
             </Symbol>
             <Symbol>
-                <Options Name="Switch_m" Address="0x20000570" Type="unsigned char" TypeID="6" Size="1" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="7" YAvgSampled="2.43134" Offset="32" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="255" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_B.Switch_m" />
+                <Options Name="Switch_m" Address="0x20000570" Type="unsigned char" TypeID="6" Size="1" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="0" YMaxSampled="7" YAvgSampled="4.81697" Offset="30" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="255" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_B.Switch_m" />
             </Symbol>
             <Symbol>
-                <Options Name="Thetae_OL" Address="0x20000600" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="6.27966" YAvgSampled="0.738406" Offset="33" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_DW.Thetae_OL" />
+                <Options Name="Thetae_OL" Address="0x20000600" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="0" YMaxSampled="6.28309" YAvgSampled="1.63176" Offset="31" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_DW.Thetae_OL" />
             </Symbol>
             <Symbol>
-                <Options Name="TransmFactor" Address="0x20000604" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="255" YMinSampled="0" YMaxSampled="2005" YAvgSampled="306.973" Offset="37" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="500" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_DW.TransmFactor" />
+                <Options Name="TransmFactor" Address="0x20000604" Type="float" TypeID="1" Size="4" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="255" YMinSampled="0" YMaxSampled="0" YAvgSampled="0" Offset="35" ShowInGraph="1" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="C:\Code\Simulink\pmsm_stm32\FOC_FD6288Q_V1\MDK-ARM/Model\PMSM_MC_2025a_ert_rtw\PMSM_MC_2025a.h" DrawStyle="0" NameWithParents="PMSM_MC_2025a_DW.TransmFactor" />
             </Symbol>
         </SelectedSymbols>
     </Project>
